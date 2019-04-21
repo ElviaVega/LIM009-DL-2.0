@@ -1,30 +1,44 @@
 /* Manejo del DOM */
+
 const containerElement = document.getElementById('conteiner');
-  function traer(){
-    fetch( 'https://raw.githubusercontent.com/Laboratoria/LIM009-DL-2.0/master/src/data/potter.json')
-      .then(res => res.json())
-      .then(data => mostrarData(data))
-        const mostrarData = (data) => {
-          let string = '';
-          for (let i = 0; i < data.length; i++) {
-            string += `<div class="card">
-                        <div>
-                          <img src=${data[i].image} alt=${data[i].name}  class='imagenRedonda'/>
-                        </div>  
-                        <div id='card' class='card1'>
-                          <h3> ${data[i].name} </h3>
-                          <h4>${data[i].house}</h4>
-                          <p>Especie: ${data[i].species}</p> 
-                                             
-                        </div> 
-                      </div>`
-           };
+/*
+let dataHarry = [];
+fetch ('https://raw.githubusercontent.com/Laboratoria/LIM009-DL-2.0/master/src/data/potter.json')
+   .then(data => data.json())
+   .then(data => {
+       dataHarry=data;
+ */
+
+const traer = () =>{
+  //let dataHarry = [];
+  fetch ('https://raw.githubusercontent.com/Laboratoria/LIM009-DL-2.0/master/src/data/potter.json')
+    .then(res => res.json()) 
+    .then(data => mostrarData(data))
           
-        return containerElement.innerHTML = string;
-      } 
 }
-traer();
-  
+    traer();
+/* Funcion que permite mostrar la data en pantalla*/
 
+const mostrarData = (data) => {
+  let string = '';
+  data.forEach(element => {
+    string += `<div class="card">
+                    <div class ="cabecera">
+                      <img src=${element.image} alt=${data.name}  class='imagenRedonda'/>                                            
+                      <p> ${element.name} </p>
+                      <p>${element.house}</p>
+                    </div> 
+                    <div id="informacion" class='card1'>
+                      <p>Especie: </p> 
+                      <p> ${element.species}</p> 
+                                             
+                    </div> 
+                </div>`
+           });
+        return containerElement.innerHTML = string;
+      
+  };
 
+      
 
+    
