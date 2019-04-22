@@ -2,14 +2,53 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <meta name = "viewport" content="width=device-width, initial-scale=1.0">
     <title>Data Lover 2.0 Harry Potter</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <header><img src="./img/logo.png" alt="logo" class="logo"></header> 
     <main id="root">
-      <h1>Bienvenida</h1>
+      <section id="menu">    
+        <nav class="menu">
+          <div>
+            <label>Ordenar por edad</label><br>
+            <button>↥</button><label>Ascendente</label><br>
+            <button>↧</button><label>Descendente</label>
+          </div>
+          <div>
+            <label>Filtrar por</label><br>
+            <label>Género</label>
+            <select name="genero">
+              <option value="femenino">Femenino</option>
+              <option value="masculino">Masculino</option>
+            </select>
+          </div>
+          <div>   
+            <label>Rol</label> 
+            <select name="rol">
+              <option value="estudiante">Estudiante</option>
+              <option value="staff">Staff</option>
+            </select>
+          </div>
+          <div>   
+            <label>Casa</label> 
+            <select name="Casa">
+              <option value="gryffindor">Gryffindor</option>
+              <option value="slytherin">Slytherin</option>
+              <option value="hufflepuff">Hufflepuff</option>
+              <option value="Ravenclaw">Ravenclaw</option>
+            </select> 
+          </div>  
+        </nav> 
+      </section>  
+      <section > 
+        <h1>Personajes de la Saga de Harry Potter</h1>
+        <div id="container"></div>
+      </section>   
+      
     </main>
-    <script src="data.js"></script>
     <script src="main.js"></script>
+    <script src="data.js"></script>
   </body>
 </html>

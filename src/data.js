@@ -1,10 +1,39 @@
 /* Manejo de data */
+const datosHarry = (data) => {
+  let arrayHarry1 = [];
+  data.forEach((item)=>{
+    let person = {};
+    person['name'] = item.name;
+    person['gender'] = item.gender;
+    person['house']=item.house;
+    person['species']=item.species;
+    person['actor']=item.actor;
+    person['image']=item.image;
+    
+    if(item.yearOfBirth === ""){
+      person["edad"] = "No especificado";
+    } else {
+      let edad = new Date().getFullYear()-item.yearOfBirth;
+      person["edad"]=edad; 
+    };
 
-// esta es una función de ejemplo
-// puedes ver como agregamos la función a nuestro objeto global window
+    if (item.hogwartsStaff === true){
+      person["rol"]= "personal";
+    }else {
+      person["rol"]= "Estudiante";
+    };
+    arrayHarry1.push(person);
+  });
+  return arrayHarry1;
+}
+ /*funcion que ordena de acuerdo a la edad*/
 
-const example = () => {
-  return 'example';
-};
+window.datosHarry = datosHarry;
 
-window.example = example;
+const orderEdad = (data) =>{
+  data.sort((a, b) => {
+    const arrayOrder = a.edad-b.edad 
+    return arrayOrder     
+  });  
+}
+window.orderEdad = orderEdad;
