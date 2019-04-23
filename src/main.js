@@ -12,11 +12,12 @@ const cargarJson = () => {
     .then(data => {
       mostrarData(datosHarry(data));
       ordAsc(datosHarry(data));
+      ordDesc(datosHarry(data));
       filtradoGenero(datosHarry(data));
       filtradoRol(datosHarry(data));
       filtradoCasa(datosHarry(data));
-    })
-}
+    });
+};
 cargarJson();
 
 /* Funcion que permite mostrar la data en pantalla*/
@@ -42,41 +43,42 @@ const mostrarData = (data) => {
           <p> ${element.actor}</p>                        
         </div> 
       </div>
-    `
+    `;
   });
   return containerElement.innerHTML = string;
 };
 
 const ordAsc = (data) => {
-  ascend.addEventListener("click", () => mostrarData(orderEdad(data, 'edad'))
-  ) 
-} 
+  ascend.addEventListener("click", () => mostrarData(orderEdad(data, 'edad', 'asc'))); 
+};
+const ordDesc = (data) => {
+  descend.addEventListener("click", () => mostrarData(orderEdad(data, 'edad', 'desc'))); 
+}; 
 
 const filtradoGenero = (data) => {
   genero.addEventListener("change", (event) => {
     event.preventDefault();
     let condGenero = event.target.value;
     if (condGenero === "femenino") {
-      condGenero= "female"
-      mostrarData(filtrar(data, "gender", condGenero))
-    }else {
-      condGenero= "male" 
-      mostrarData(filtrar(data, "gender", condGenero))
+      condGenero = "female";
+      mostrarData(filtrar(data, "gender", condGenero));
+    } else {
+      condGenero = "male"; 
+      mostrarData(filtrar(data, "gender", condGenero));
     }
-       
-  })
-}
+  });
+};
 
 const filtradoRol = (data) => {
   rol.addEventListener("change", () => {
     let condRol = rol.value;
-    mostrarData(filtrar(data, "rol", condRol))
-  })
-}
+    mostrarData(filtrar(data, "rol", condRol));
+  });
+};
 
 const filtradoCasa = (data) => {
   casa.addEventListener("change", () => {
     let condCasa = casa.value;
-    mostrarData(filtrar(data, "house", condCasa))
-  })
-}
+    mostrarData(filtrar(data, "house", condCasa));
+  });
+};
