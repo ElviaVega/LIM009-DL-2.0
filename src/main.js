@@ -5,9 +5,9 @@ const cargarJson = () => {
   fetch ('https://raw.githubusercontent.com/ElviaVega/LIM009-DL-2.0/master/src/data/potter.json')
     .then(response => response.json()) 
     .then(data => {
-      console.log(datosHarry(data));
+      //console.log(datosHarry(data));
       mostrarData(datosHarry(data));
-      console.log(orderEdad(datosHarry(data)));
+      console.log(orderEdad(datosHarry(data),'edad'));
     })
 }
 cargarJson();

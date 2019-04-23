@@ -30,10 +30,8 @@ const datosHarry = (data) => {
 
 window.datosHarry = datosHarry;
 
-const orderEdad = (data) =>{
-  data.sort((a, b) => {
-    const arrayOrder = a.edad-b.edad 
-    return arrayOrder     
-  });  
+const orderEdad = (data,sortBy) =>{
+  const arrayOrder = data.sort((a, b) => a[sortBy]-b[sortBy]);
+  return arrayOrder;
 }
 window.orderEdad = orderEdad;
