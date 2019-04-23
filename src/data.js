@@ -30,10 +30,14 @@ const datosHarry = (data) => {
 
 window.datosHarry = datosHarry;
 
-const orderEdad = (data) =>{
-  data.sort((a, b) => {
-    const arrayOrder = a.edad-b.edad 
-    return arrayOrder     
-  });  
+const orderEdad = (data, prop) =>{
+  const arrayOrder = data.sort((a, b) => a[prop]-b[prop])
+  return arrayOrder     
 }
 window.orderEdad = orderEdad;
+
+const filtrar = (data, prop, condicion) => {
+  const filterArray = data.filter(item => item[prop] === condicion) 
+  return filterArray
+}
+window.filtrar = filtrar

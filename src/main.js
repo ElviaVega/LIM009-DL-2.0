@@ -1,13 +1,16 @@
 /* Manejo del DOM */
 const containerElement = document.getElementById('container');
+const ascend = document.getElementById("asc");
+const descend = document.getElementById("desc");
 
 const cargarJson = () => {
   fetch ('https://raw.githubusercontent.com/ElviaVega/LIM009-DL-2.0/master/src/data/potter.json')
     .then(response => response.json()) 
     .then(data => {
-      console.log(datosHarry(data));
+      // console.log(datosHarry(data));
       mostrarData(datosHarry(data));
-      console.log(orderEdad(datosHarry(data)));
+      ascend.addEventListener("click", () => mostrarData(orderEdad(datosHarry(data), 'edad')));  
+      descend.addEventListener("click", () => mostrarData(orderEdad(datosHarry(data), 'edad').reverse()));
     })
 }
 cargarJson();
@@ -39,6 +42,9 @@ const mostrarData = (data) => {
   });
   return containerElement.innerHTML = string;
 };
-
-
-    
+/*
+const ordAsc = () => {
+  ascend.addEventListener("click", () => mostrarData(orderEdad(datosHarry(data), 'edad'))
+  ) 
+} 
+*/
