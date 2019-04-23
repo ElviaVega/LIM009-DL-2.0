@@ -1,13 +1,20 @@
 /* Manejo del DOM */
 const containerElement = document.getElementById('container');
+const ascend = document.getElementById("asc");
+const descend = document.getElementById("desc");
+const genero = document.getElementById("genero");
+const rol = document.getElementById("rol");
+const casa = document.getElementById("casa");
 
 const cargarJson = () => {
   fetch ('https://raw.githubusercontent.com/ElviaVega/LIM009-DL-2.0/master/src/data/potter.json')
     .then(response => response.json()) 
     .then(data => {
-      //console.log(datosHarry(data));
       mostrarData(datosHarry(data));
-      console.log(orderEdad(datosHarry(data),'edad'));
+      ordAsc(datosHarry(data));
+      filtradoGenero(datosHarry(data));
+      filtradoRol(datosHarry(data));
+      filtradoCasa(datosHarry(data));
     })
 }
 cargarJson();
@@ -40,5 +47,36 @@ const mostrarData = (data) => {
   return containerElement.innerHTML = string;
 };
 
+const ordAsc = (data) => {
+  ascend.addEventListener("click", () => mostrarData(orderEdad(data, 'edad'))
+  ) 
+} 
 
-    
+const filtradoGenero = (data) => {
+  genero.addEventListener("change", (event) => {
+    event.preventDefault();
+    let condGenero = event.target.value;
+    if (condGenero === "femenino") {
+      condGenero= "female"
+      mostrarData(filtrar(data, "gender", condGenero))
+    }else {
+      condGenero= "male" 
+      mostrarData(filtrar(data, "gender", condGenero))
+    }
+       
+  })
+}
+
+const filtradoRol = (data) => {
+  rol.addEventListener("change", () => {
+    let condRol = rol.value;
+    mostrarData(filtrar(data, "rol", condRol))
+  })
+}
+
+const filtradoCasa = (data) => {
+  casa.addEventListener("change", () => {
+    let condCasa = casa.value;
+    mostrarData(filtrar(data, "house", condCasa))
+  })
+}

@@ -18,7 +18,7 @@ const datosHarry = (data) => {
     };
 
     if (item.hogwartsStaff === true){
-      person["rol"]= "personal";
+      person["rol"]= "Staff";
     }else {
       person["rol"]= "Estudiante";
     };
@@ -30,8 +30,14 @@ const datosHarry = (data) => {
 
 window.datosHarry = datosHarry;
 
-const orderEdad = (data,sortBy) =>{
-  const arrayOrder = data.sort((a, b) => a[sortBy]-b[sortBy]);
-  return arrayOrder;
+const orderEdad = (data, prop) =>{
+  const arrayOrder = data.sort((a, b) => a[prop]-b[prop])
+  return arrayOrder     
 }
 window.orderEdad = orderEdad;
+
+const filtrar = (data, prop, condicion) => {
+  const filterArray = data.filter(item => item[prop] === condicion) 
+  return filterArray
+}
+window.filtrar = filtrar
