@@ -11,6 +11,7 @@ const cargarJson = () => {
     .then(response => response.json()) 
     .then(data => {
       mostrarData(datosHarry(data));
+      console.log(datosHarry(data));
       ordAsc(datosHarry(data));
       ordDesc(datosHarry(data));
       filtradoGenero(datosHarry(data));
@@ -56,9 +57,8 @@ const ordDesc = (data) => {
 }; 
 
 const filtradoGenero = (data) => {
-  genero.addEventListener("change", (event) => {
-    event.preventDefault();
-    let condGenero = event.target.value;
+  genero.addEventListener("change", () => {
+    let condGenero = genero.value;
     if (condGenero === "femenino") {
       condGenero = "female";
       mostrarData(filtrar(data, "gender", condGenero));
