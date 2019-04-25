@@ -59,13 +59,7 @@ const ordDesc = (data) => {
 const filtradoGenero = (data) => {
   genero.addEventListener("change", () => {
     let condGenero = genero.value;
-    if (condGenero === "femenino") {
-      condGenero = "female";
-      mostrarData(filtrar(data, "gender", condGenero));
-    } else {
-      condGenero = "male"; 
-      mostrarData(filtrar(data, "gender", condGenero));
-    }
+    mostrarData(filtrar(data, "gender", condGenero));
   });
 };
 

@@ -19,9 +19,11 @@ const datosHarry = (data) => {
 
     if (item.hogwartsStaff === true) {
       person["rol"] = "Staff";
-    } else {
-      person["rol"] = "Estudiante";
-    }
+    } else if (item.hogwartsStudent === true){
+        person["rol"] = "Estudiante";
+      } else {
+        person["rol"] = "no especificado";
+      }
     arrayHarry1.push(person);
   });
   return arrayHarry1;
@@ -35,7 +37,7 @@ const orderEdad = (data, prop, condicion) => {
     const arrayOrder = data.sort((parametroA, parametroB) => parametroA[prop] - parametroB[prop]);
     return arrayOrder;
   } else {
-    const arrayOrder = data.sort((parametroA, parametroB) => parametroA[prop] - parametroB[prop]);
+    const arrayOrder = data.sort((parametroA, parametroB) => parametroB[prop] - parametroA[prop]);
     return arrayOrder;
   } 
 };
