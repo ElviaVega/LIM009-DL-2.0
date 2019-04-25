@@ -19,11 +19,11 @@ const datosHarry = (data) => {
 
     if (item.hogwartsStaff === true) {
       person["rol"] = "Staff";
-    } else if (item.hogwartsStudent === true){
-        person["rol"] = "Estudiante";
-      } else {
-        person["rol"] = "no especificado";
-      }
+    } else if (item.hogwartsStudent === true) {
+      person["rol"] = "Estudiante";
+    } else {
+      person["rol"] = "no especificado";
+    }
     arrayHarry1.push(person);
   });
   return arrayHarry1;

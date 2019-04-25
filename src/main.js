@@ -7,11 +7,10 @@ const rol = document.getElementById("rol");
 const casa = document.getElementById("casa");
 
 const cargarJson = () => {
-  fetch ('https://raw.githubusercontent.com/ElviaVega/LIM009-DL-2.0/master/src/data/potter.json')
+  fetch('https://raw.githubusercontent.com/ElviaVega/LIM009-DL-2.0/master/src/data/potter.json')
     .then(response => response.json()) 
     .then(data => {
       mostrarData(datosHarry(data));
-      console.log(datosHarry(data));
       ordAsc(datosHarry(data));
       ordDesc(datosHarry(data));
       filtradoGenero(datosHarry(data));
