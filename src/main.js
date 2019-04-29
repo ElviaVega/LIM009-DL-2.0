@@ -26,13 +26,10 @@ const mostrarData = (data) => {
   let string = '';
   data.forEach(element => {
     string += `
-      <div class="card">
-        <div class ="cabecera">
+      <div class="card col-xs-6 col-lg-4">
           <img src=${element.image} alt=${data.name}  class='imagenRedonda'/>                                            
           <p> ${element.name} </p>
           <p>${element.house}</p>
-        </div> 
-        <div id="informacion" class='card1'>
           <p>Especie: </p> 
           <p> ${element.species}</p>
           <p>Rol: </p>
@@ -41,7 +38,6 @@ const mostrarData = (data) => {
           <p> ${element.edad}</p>
           <p>Actor: </p>
           <p> ${element.actor}</p>                        
-        </div> 
       </div>
     `;
   });
