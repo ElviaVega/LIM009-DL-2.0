@@ -1,4 +1,5 @@
 /* Manejo de data */
+
 const datosHarry = (data) => {
   let arrayHarry1 = [];
   data.forEach((item) => {
