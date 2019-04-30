@@ -19,9 +19,11 @@
 
 .menu {
     background: #808080;
-    padding-top: 5%;
-    padding-block-end: 100%;
-    display: block;  
+
+    /*padding-block-end: 100%;*/
+    display: block; 
+    padding: 2%;
+    
 }
 
 .logo {
@@ -68,6 +70,25 @@
     width: 16.666%
 }
 
+
+.ordenar {
+    padding: 20px;
+}
+
+select {
+    padding: 5px;
+}
+.bandera {
+    float: right;
+    height: 50px;
+    width: 50px;
+    padding-right: 8px;
+}
+.boton {
+    margin: 5px;
+    width: 25px;
+}
+
 @media(max-width: 750px){
     .col-mobile-12 {
         width: 100%;
@@ -78,23 +99,4 @@
     .col-mobile-4 {
         width: 33.333%;
     }
-}
-.ordenar {
-    padding: 20px;
-}
-.filtar{
-    padding: 20px;
-}
-
-.filtrar-por {
-    padding: 20px;
-}
-select {
-    padding: 5px;
-}
-.bandera {
-    float: right;
-    height: 50px;
-    width: 50px;
-    padding-right: 8px;
 }
