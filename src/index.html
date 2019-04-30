@@ -7,31 +7,31 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <main id="root" class="container_gen">
-      <section class= "menu col-xs-12 col-lg-3">
-        <div class="col-xs-4 col-lg-3">
+    <main id="root">
+      <section class="menu col-2 col-mobile-12">
+        <div class="col-mobile-4 col-12">
           <img src="./img/Logo-harry-potter.gif" alt="logo" class="logo">
         </div>     
-        <div class = "ordenar col-xs-4 col-lg-12">
+        <div class="col-mobile-4 col-12 ordenar">
           <p>Ordenar por edad<p>
           <button id="asc"> ↥ </button><label>Ascendente</label><br>
           <button id="desc"> ↧ </button><label>Descendente</label>
         </div>
-        <div class = "filtrar col-xs-4 col-lg-12">
-          <label>Filtrar por</label><br>
-          <label>Género</label>
-          <select id="genero">
+        <div class="col-mobile-4 col-12 filtrar">
+          <p class="filtrar-por">Filtrar por</p>
+          <p>Género</p>
+          <select id="genero" class="filtrar">
             <option value="blanco">genero</option>
             <option value="female">Femenino</option>
             <option value="male">Masculino</option>
           </select>       
-          <label>Rol</label> 
+          <p>Rol</p> 
           <select id="rol">
             <option value="blanco">rol</option>
             <option value="Estudiante">Estudiante</option>
             <option value="Staff">Staff</option>
           </select>
-          <label>Casa</label> 
+          <p>Casa</p> 
           <select id="casa">
             <option value="blanco">casa</option>
             <option value="Gryffindor">Gryffindor</option>
@@ -41,9 +41,9 @@
           </select> 
         </div>  
       </section>  
-      <section class="col-xs-12 col-lg-9" > 
+      <section class="col-10 col-mobile-12" > 
         <h1>Personajes de la Saga de Harry Potter</h1>
-        <div id="container" class="container col-xs-12 col-lg-9"></div>
+        <div id="container" class="container-menu"></div>
       </section>   
       
     </main>
