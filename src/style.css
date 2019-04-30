@@ -18,7 +18,7 @@
 
 
 .menu {
-    background: #808080;
+    background: rgb(32, 178, 170);
 
     /*padding-block-end: 100%;*/
     display: block; 
@@ -37,7 +37,7 @@
     width: 70%;
     padding: 10px;
     margin: 5% 15%;
-    background:rgb(0,0,0);
+    background:rgb(32, 178, 170, 0.5);
     color: whitesmoke;
     border-radius: 5%;
     border-style: solid;
@@ -49,6 +49,9 @@
     margin: auto;
     text-align: center;
 
+}
+.fondo {
+    background-image: url(img/fondo_pantalla.jpg)
 }
 
 
